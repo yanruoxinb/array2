@@ -2,7 +2,17 @@
 
 function double_to_one(collection) {
 var arr=new Array();
-arr = (collection+'').split(',');
+		var Len=collection.length;
+		for(var i=0;i<Len;i++){			
+			if(isArray(collection[i])==true){
+				var innerLen=collection[i].length
+				for(var j=0;j<innerLen;j++){
+					arr.push(collection[i][j]);
+				}
+			}
+			else
+				arr.push(collection[i])
+		}
 return arr;
 }
 
